@@ -1,2 +1,6 @@
 #!/bin/sh
-exit 0
+cat <<EOF
+---
+config_vars:
+PATH: $PATH:/app/vendor/sphinx
+EOF
