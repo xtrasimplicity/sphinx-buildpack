@@ -1,0 +1,19 @@
+#!/bin/sh
+# Define constants
+VERSION='2.2.11'
+TARBALL_URL='https://github.com/xtrasimplicity/sphinx-buildpack/blob/master/prebuilt_binaries.tar.gz'
+TARGET_DIR='vendor/sphinx'
+
+# Retrieve arguments
+BUILD_DIR=$1
+#CACHE_DIR=$2
+#ENV_DIR=$3
+
+
+echo "-----> Installing Sphinx ${VERSION}"
+
+cd $BUILD_DIR
+curl $TARBALL_URL -s -o binaries.tar.gz
+mkdir -p $TARGET_DIR
+tar xvf binaries.tar.gz -C $TARGET_DIR
+rm binaries.tar.gz
