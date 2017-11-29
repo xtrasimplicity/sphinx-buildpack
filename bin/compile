@@ -15,5 +15,5 @@ echo "-----> Installing Sphinx ${VERSION}"
 cd $BUILD_DIR
 mkdir -p $TARGET_DIR
 curl $TARBALL_URL -s -o binaries.tar.gz
-tar xvfz binaries.tar.gz -C $TARGET_DIR
+tar xfz binaries.tar.gz -C $TARGET_DIR
 rm binaries.tar.gz
