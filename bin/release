@@ -2,5 +2,5 @@
 cat <<EOF
 ---
 config_vars:
-PATH: $PATH:/app/vendor/sphinx
+PATH: $PATH:/app/vendor/sphinx/bin
 EOF
