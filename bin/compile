@@ -21,3 +21,10 @@ curl $TARBALL_URL -s -o binaries.tar.gz
 echo "-------> Deploying pre-built binaries"
 tar xfz binaries.tar.gz -C $TARGET_DIR
 rm binaries.tar.gz
+
+echo "-------> Updating environment variables"
+PROFILE_DIR=".profile.d"
+
+mkdir $PROFILE_DIR
+echo 'export PATH="$HOME/vendor/sphinx/bin:$PATH"' > $PROFILE_DIR/sphinx_init.sh
+chmod +x $PROFILE_DIR/sphinx_init.sh
