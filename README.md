@@ -6,7 +6,14 @@ Simply include this repository's URL in your `.buildpacks` file in your applicat
 
 # Known Limitations
 - **Postgres support may be broken.**   
-  I've had issues staticly linking postgres when compiling, so the binary files may require additional postgres libraries (`.so` files). If you're more comfortable than I am with this sort of thing, feel free to fork this repository, patch it and then submit a PR. Rough instructions for how I compiled mysql support can be found below.
+  I've had issues staticly linking postgres when compiling, so the binary files may require additional postgres libraries (`.so` files). If you're more comfortable than I am with this sort of thing, feel free to fork this repository, patch it and then submit a PR. Rough instructions for how I compiled mysql support can be found in the development section below.
+
+# Versions
+Specific versions of Sphinx can be deployed by specifying the appropriate tag when referencing this repository in your buildpack. Each release is tagged using the same version number as Sphinx -- i.e. prebuilt binaries for Sphinx `v2.2.11` are tagged `v2.2.11` in this repository.
+
+As of writing, the following versions are supported:
+- Sphinx version 2.2.11 => Tag: v2.2.11
+
 
 # Development
 If you would like to add a new version of Sphinx to this repository, simply download the source code for the desired version, configure it to use staticly-linked mysql and postgres libraries, and compile it.
