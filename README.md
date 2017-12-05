@@ -1,8 +1,27 @@
 # sphinx-buildpack
-Heroku buildpack for Sphinx search. (http://sphinxsearch.com/)
+Sphinx buildpack for Heroku/Dokku. (http://sphinxsearch.com/)
+
+Please note: references to Sphinx in this repository are referring to the [Sphinx search engine](http://sphinxsearch.com), not the [documentation generator](http://www.sphinx-doc.org) for Python.
 
 # Usage
-Simply include this repository's URL in your `.buildpacks` file in your application's repository, alongside your other buildpacks.
+Simply include this repository's URL in your `.buildpacks` file in your application's repository, alongside your other buildpacks. Alternatively, you can use the `BUILDPACK_URL` environment variable (Dokku, old versions of Heroku), or `heroku buildpacks:set` (Heroku).
+
+**Example implementation - using a `.buildpacks` file**
+```
+https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11
+# your other buildpacks...
+```
+
+**Example implementation - using the `BUILDPACK_URL` environment variable (Dokku)**
+```
+dokku config:set APPLICATION_NAME BUILDPACK_URL="https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11"
+```
+
+**Example implementation - using `heroku buildpacks:set`**
+```
+heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11
+```
+
 
 # Known Limitations
 - **Postgres support may be broken.**   
