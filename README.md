@@ -8,23 +8,23 @@ Simply include this repository's URL in your `.buildpacks` file in your applicat
 
 **Example implementation - using a `.buildpacks` file**
 ```
-https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11
+https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1
 # your other buildpacks...
 ```
 
 **Example implementation - using the `BUILDPACK_URL` environment variable (Dokku)**
 ```
-dokku config:set APPLICATION_NAME BUILDPACK_URL="https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11"
+dokku config:set APPLICATION_NAME BUILDPACK_URL="https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1"
 ```
 
 **Example implementation - using `heroku buildpacks:set`**
 ```
-heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v2.2.11
+heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1
 ```
 
 
 # Known Limitations
-- **Postgres support may be broken.**   
+- **Version 2.2.11: Postgres support may be broken.**   
   I've had issues staticly linking postgres when compiling, so the binary files may require additional postgres libraries (`.so` files). If you're more comfortable than I am with this sort of thing, feel free to fork this repository, patch it and then submit a PR. Rough instructions for how I compiled mysql support can be found in the development section below.
 
 # Versions
@@ -32,15 +32,13 @@ Specific versions of Sphinx can be deployed by specifying the appropriate tag wh
 
 As of writing, the following versions are supported:
 - Sphinx version 2.2.11 => Tag: v2.2.11
-
+- Sphinx version 3.0.1 => Tag: v3.0.1
 
 # Development
-If you would like to add a new version of Sphinx to this repository, simply download the source code for the desired version, configure it to use staticly-linked mysql and postgres libraries, and compile it.
+If you would like to add a new version of Sphinx to this repository, simply download the binaries for the desired version, and extract the files.
 i.e:
 ```
-tar xvfz sphinx-2.2.11-release.tar.gz
-cd sphinx-2.2.11-release
-./configure --prefix="/home/`whoami`/sphinx_build" --with-static-mysql --with-mysql-libs=/usr/lib/x86_64-linux-gnu --with-pgsql
-make -j4 install
+tar xvfz sphinx-3.0.1-release.tar.gz
+cd sphinx-3.0.1-release
 ```
 You can then compress them into a tarball, fork this repository, replace the path to prebuilt_binaries.tar.gz, update the `bin/compile` file and then submit a merge request with the version you're adding. If accepted, a tag matching the sphinx version will be created.
