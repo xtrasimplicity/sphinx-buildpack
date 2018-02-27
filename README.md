@@ -8,18 +8,18 @@ Simply include this repository's URL in your `.buildpacks` file in your applicat
 
 **Example implementation - using a `.buildpacks` file**
 ```
-https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1
+https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.2
 # your other buildpacks...
 ```
 
 **Example implementation - using the `BUILDPACK_URL` environment variable (Dokku)**
 ```
-dokku config:set APPLICATION_NAME BUILDPACK_URL="https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1"
+dokku config:set APPLICATION_NAME BUILDPACK_URL="https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.2"
 ```
 
 **Example implementation - using `heroku buildpacks:set`**
 ```
-heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.1
+heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.0.2
 ```
 
 
