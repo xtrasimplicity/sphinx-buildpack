@@ -1,6 +1,6 @@
 #!/bin/sh
 # Define constants
-VERSION='3.0.1'
+VERSION='3.0.2'
 TARBALL_FILENAME='prebuilt_binaries.tar.gz'
 TARGET_DIR='vendor/sphinx'
 

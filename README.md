@@ -31,8 +31,9 @@ heroku buildpacks:set https://github.com/xtrasimplicity/sphinx-buildpack.git#v3.
 Specific versions of Sphinx can be deployed by specifying the appropriate tag when referencing this repository in your buildpack. Each release is tagged using the same version number as Sphinx -- i.e. prebuilt binaries for Sphinx `v2.2.11` are tagged `v2.2.11` in this repository.
 
 As of writing, the following versions are supported:
-- Sphinx version 2.2.11 => Tag: v2.2.11
+- Sphinx version 3.0.2 => Tag: v3.0.2
 - Sphinx version 3.0.1 => Tag: v3.0.1
+- Sphinx version 2.2.11 => Tag: v2.2.11
 
 # Development
 If you would like to add a new version of Sphinx to this repository, simply download the binaries for the desired version, and extract the files.
